@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stringrandom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stringcreator
+  template:
+    metadata:
+      labels:
+        app: stringcreator
+    spec:
+      containers:
+        - name: stringcreator
+          image: vilkorppi/generator:v2
