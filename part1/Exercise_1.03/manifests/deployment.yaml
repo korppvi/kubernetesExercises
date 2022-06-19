@@ -13,5 +13,5 @@ spec:
         app: stringrandom
     spec:
       containers:
-        - name: stringrandom
+        - name: cookiemoster
           image: vilkorppi/generator:v2
