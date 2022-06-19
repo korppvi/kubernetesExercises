@@ -1,0 +1,25 @@
+
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.03/manifests/deployment.yaml
+
+kubectl get pods
+
+NAME                            READY   STATUS    RESTARTS   AGE
+webserverdep-bfcf68f64-h5775    1/1     Running   0          7m41s
+stringrandom-85b6d4f85c-xj9sx   2/2     Running   0          8s
+
+kubectl logs stringrandom-85b6d4f85c-xj9sx
+
+Defaulted container "cookiemonster" out of: cookiemonster, generator
+Af,)���: 2022-06-19 17:28:38.213
+Af,)���: 2022-06-19 17:28:43.323
+Af,)���: 2022-06-19 17:28:48.324
+Af,)���: 2022-06-19 17:28:53.325
+Af,)���: 2022-06-19 17:28:58.325
+Af,)���: 2022-06-19 17:29:03.325
+Af,)���: 2022-06-19 17:29:08.326
+Af,)���: 2022-06-19 17:29:13.326
+Af,)���: 2022-06-19 17:29:18.331
+Af,)���: 2022-06-19 17:29:23.332
+Af,)���: 2022-06-19 17:29:28.332
+
