@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: stringrandom
-          image: vilkorppi/generator:7efd142ce115
+          image: vilkorppi/generator:v2
