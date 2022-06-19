@@ -2,18 +2,25 @@
 
 After creating cluster I run these commands :
 
-kubectl create deployment stringrandom --image=vilkorppi/kubernetesexercises:generator
+kubectl create deployment stringrandom --image=vilkorppi/generator:v1
 
 kubectl get pods
 
 NAME                           READY   STATUS    RESTARTS   AGE
-stringrandom-6f67d44bd-gw7vx   1/1     Running   0          23h
+stringrandom-8b4775996-jtqv8   1/1     Running   0          3m39s
 
-kubectl logs stringrandom-6f67d44bd-gw7vx
+kubectl logs stringrandom-8b4775996-jtqv8
 
-t|e9Xb): 2022-06-19 17:37:10.668
-t|e9Xb): 2022-06-19 17:37:15.669
-t|e9Xb): 2022-06-19 17:37:20.669
-t|e9Xb): 2022-06-19 17:37:25.67
-t|e9Xb): 2022-06-19 17:37:30.671
-t|e9Xb): 2022-06-19 17:37:35.671
+���uʨ�S�: 2022-06-19 20:11:39.625
+���uʨ�S�: 2022-06-19 20:11:44.626
+���uʨ�S�: 2022-06-19 20:11:49.626
+���uʨ�S�: 2022-06-19 20:11:54.626
+���uʨ�S�: 2022-06-19 20:11:59.627
+���uʨ�S�: 2022-06-19 20:12:04.628
+���uʨ�S�: 2022-06-19 20:12:09.63
+���uʨ�S�: 2022-06-19 20:12:14.63
+���uʨ�S�: 2022-06-19 20:12:19.63
+���uʨ�S�: 2022-06-19 20:12:24.631
+���uʨ�S�: 2022-06-19 20:12:29.631
+���uʨ�S�: 2022-06-19 20:12:34.632
+���uʨ�S�: 2022-06-19 20:12:39.633
