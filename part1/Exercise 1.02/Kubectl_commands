@@ -1,6 +1,6 @@
 
 
-kubectl create deployment webserverPort --image=vilkorppi/webserver:v1
+kubectl create deployment webserverport --image=vilkorppi/webserver:v1
 
 kubectl get pods
 
