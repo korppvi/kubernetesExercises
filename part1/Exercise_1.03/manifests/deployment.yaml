@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: stringcreator
+      app: stringrandom
   template:
     metadata:
       labels:
-        app: stringcreator
+        app: stringrandom
     spec:
       containers:
-        - name: stringcreator
+        - name: stringrandom
           image: vilkorppi/generator:v2
