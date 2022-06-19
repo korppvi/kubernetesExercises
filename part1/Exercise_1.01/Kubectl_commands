@@ -2,3 +2,18 @@
 
 After creating cluster I run these commands :
 
+kubectl create deployment stringrandom --image=vilkorppi/kubernetesexercises:generator
+
+kubectl get pods
+
+NAME                           READY   STATUS    RESTARTS   AGE
+stringrandom-6f67d44bd-gw7vx   1/1     Running   0          23h
+
+kubectl logs stringrandom-6f67d44bd-gw7vx
+
+t|e9Xb): 2022-06-19 17:37:10.668
+t|e9Xb): 2022-06-19 17:37:15.669
+t|e9Xb): 2022-06-19 17:37:20.669
+t|e9Xb): 2022-06-19 17:37:25.67
+t|e9Xb): 2022-06-19 17:37:30.671
+t|e9Xb): 2022-06-19 17:37:35.671
