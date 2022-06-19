@@ -1,0 +1,15 @@
+
+
+kubectl create deployment webserverdep --image=vilkorppi/kubernetesexercises:webserver
+
+kubectl get pods
+
+NAME                           READY   STATUS    RESTARTS      AGE
+stringrandom-6f67d44bd-gw7vx   1/1     Running   1 (15m ago)   23h
+webserverdep-bfcf68f64-h5775   1/1     Running   0             8m19s
+
+kubectl logs webserverdep-bfcf68f64-h5775
+
+> node index.js
+
+Server started in port undefined
