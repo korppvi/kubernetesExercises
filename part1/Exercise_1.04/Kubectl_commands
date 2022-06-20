@@ -1,0 +1,17 @@
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.04/manifests/deployment.yaml
+
+kubectl get pods
+
+NAME                             READY   STATUS    RESTARTS      AGE
+stringrandom-85b6d4f85c-xj9sx    2/2     Running   2 (39m ago)   6h43m
+webserverport-6488b7d99c-vdhkr   2/2     Running   0             26s
+
+kubectl logs webserverport-6488b7d99c-vdhkr
+
+Defaulted container "webmaster" out of: webmaster, webserver
+
+> Project@1.0.0 start
+> node index.js
+
+Server started in port undefined
