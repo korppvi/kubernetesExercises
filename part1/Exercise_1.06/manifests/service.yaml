@@ -11,4 +11,4 @@ spec:
       nodePort: 30050
       protocol: TCP
       port: 456
-      targetPort: 3007
+      targetPort: 3015
