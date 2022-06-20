@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webserver
+  name: webserverport
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webserver
+      app: webserverport
   template:
     metadata:
       labels:
-        app: webserver
+        app: webserverport
     spec:
       containers:
-        - name: webmaster
+        - name: webserverport
           image: vilkorppi/webserver:v3
