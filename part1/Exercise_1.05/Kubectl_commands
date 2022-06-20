@@ -8,7 +8,7 @@ webserverport-585b755d7b-v79dn   2/2     Running   0              9m25s
 
 kubectl delete deployment webserverport
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise%201.05/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.05/manifests/deployment.yaml
 
 kubectl get pods
 NAME                             READY   STATUS    RESTARTS       AGE
