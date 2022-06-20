@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: webmaster
-          image: vilkorppi/webserver:v2
+          image: vilkorppi/webserver:v3
