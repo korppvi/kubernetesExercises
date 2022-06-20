@@ -7,3 +7,5 @@ k3d cluster create --port 3050:30050@agent:0 -p 8091:85@loadbalancer --agents 2
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.06/manifests/deployment.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.06/manifests/service.yaml
+
+Server awnser from url : http://localhost:3050/api/test
