@@ -1,0 +1,20 @@
+
+
+kubectl get pods
+
+NAME                             READY   STATUS    RESTARTS       AGE
+stringrandom-85b6d4f85c-xj9sx    2/2     Running   4 (173m ago)   21h
+webserverport-585b755d7b-v79dn   2/2     Running   0              9m25s
+
+kubectl delete deployment webserverport
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise%201.05/manifests/deployment.yaml
+
+kubectl get pods
+NAME                             READY   STATUS    RESTARTS       AGE
+stringrandom-85b6d4f85c-xj9sx    2/2     Running   4 (175m ago)   22h
+webserverport-64d78fb4f9-6dgnc   1/1     Running   0              5s
+
+kubectl port-forward webserverport-64d78fb4f9-6dgnc 3002:3015
+
+After this Webserver awnsered from url : http://localhost:3002/api/test
