@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webserverservice
+spec:
+  type: ClusterIP
+  selector:
+    app: webserverport
+  ports:
+    - port: 456
+      protocol: TCP
+      targetPort: 3015
