@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webserverport
+  name: stringgenerator
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webserverport
+      app: stringgenerator
   template:
     metadata:
       labels:
-        app: webserverport
+        app: stringgenerator
     spec:
       containers:
-        - name: webserverport
+        - name: stringgenerator
           image: vilkorppi/webserver:v5
