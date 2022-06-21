@@ -1,5 +1,5 @@
 FROM node:alpine
-COPY . /usr/src/webserver
-WORKDIR /usr/src/webserver
+COPY . /usr/src/generator
+WORKDIR /usr/src/generator
 RUN npm ci
 CMD ["npm", "start"]
