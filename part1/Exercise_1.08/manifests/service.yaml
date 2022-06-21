@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 456
       protocol: TCP
-      targetPort: 3015
+      targetPort: 3013
