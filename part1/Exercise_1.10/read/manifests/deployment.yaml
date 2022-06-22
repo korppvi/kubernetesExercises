@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stringgenerator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stringgenerator
+  template:
+    metadata:
+      labels:
+        app: stringgenerator
+    spec:
+      volumes:
+        - name: timestamps
+          emptyDir: {}
+      containers:
+        - name: generatorwrite
+          image: vilkorppi/generator:v5
+          volumeMounts:
+          - name: timestamps
+            mountPath: /usr/src/logs/timestamp
+        - name: generatorread
+          image: vilkorppi/generator:v6
+          volumeMounts:
+          - name: timestamps
+            mountPath: /usr/src/logs/timestamp
