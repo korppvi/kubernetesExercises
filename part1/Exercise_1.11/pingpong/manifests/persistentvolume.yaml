@@ -10,7 +10,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   local:
-    path: /pingdata/log
+    path: /tmp/pingdata
   nodeAffinity:
     required:
       nodeSelectorTerms:

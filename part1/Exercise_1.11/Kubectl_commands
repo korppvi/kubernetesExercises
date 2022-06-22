@@ -2,4 +2,4 @@
 
 
 
-docker exec k3d-k3s-default-agent-0 mkdir -p /pingdata/log
+docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/pingdata
