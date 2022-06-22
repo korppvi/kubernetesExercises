@@ -6,15 +6,21 @@ var generatedhash = hashGenerator(8);
 
 const fs = require('fs')
 const path="/pingdata/log/"
+var pong=''
 
 routerTest.get('/',async(request, response) => {
 
       fs.readFile(path+'pongs.txt', 'utf8', (readError, pongs) => {
+
+            if(readError) {
+                  console.log(readError)
+            }
      
-            console.log(new Date(Date.now())+': '+generatedhash)
-            console.log((readError ? readError : 'Ping / Pongs: '+pongs))
-      
+            response.write(new Date(Date.now())+': '+generatedhash, 'utf8', () => {});
+            response.end('\nPing / Pongs: '+pongs)
       });
+
+
 	  
 })
 
