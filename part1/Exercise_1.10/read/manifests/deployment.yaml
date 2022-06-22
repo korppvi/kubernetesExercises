@@ -16,13 +16,13 @@ spec:
         - name: timestamps
           emptyDir: {}
       containers:
-        - name: generatorread
-          image: vilkorppi/generator:v6
+        - name: generatorwrite
+          image: vilkorppi/generator:v5
           volumeMounts:
           - name: timestamps
             mountPath: /usr/src/generator/timestamp
-        - name: generatorwrite
-          image: vilkorppi/generator:v5
+        - name: generatorread
+          image: vilkorppi/generator:v6
           volumeMounts:
           - name: timestamps
             mountPath: /usr/src/generator/timestamp

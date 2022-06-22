@@ -5,7 +5,7 @@ const http = require('http')
 const cron = require('node-cron');
 const server = http.createServer(app)
 const fs = require('fs')
-const path="/usr/src/generator/timestamp"
+const path="/usr/src/generator/timestamp/"
 
 const portEnv = process.env.PORT || 3012
 
