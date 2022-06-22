@@ -11,17 +11,13 @@ const portEnv = process.env.PORT || 3012
 
 cron.schedule('*/5 * * * * *', async () => {
 
-
-   console.log("read "+path+'time.txt')
-
-   fs.readFile(path+'time.txt', 'utf8', (readError, data) => {
+   fs.readFile(path+'time.txt', 'utf8', (readError, timestamp) => {
      
-      console.log((readError ? readError : data+': '+generatedstring) )
+      console.log((readError ? readError : timestamp+': '+generatedstring) )
 
     });
 
-    console.log("success")
-
+   
 });
 
 server.listen(portEnv, () => {
