@@ -5,7 +5,7 @@ var hashGenerator = require('hash-generator');
 var generatedhash = hashGenerator(8);
 
 const fs = require('fs')
-const path="/tmp/pingdata/"
+const path="/usr/src/generator/howmanypings/"
 var pong=''
 
 routerTest.get('/',async(request, response) => {

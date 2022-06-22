@@ -19,3 +19,6 @@ spec:
       containers:
         - name: stringgenerator
           image: vilkorppi/generator:v7
+          volumeMounts:
+          - name: pingdataforgen
+            mountPath: /usr/src/generator/howmanypings

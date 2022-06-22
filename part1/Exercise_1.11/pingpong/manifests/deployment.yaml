@@ -19,3 +19,6 @@ spec:
       containers:
         - name: pingpong
           image: vilkorppi/pingpong:v2
+          volumeMounts:
+          - name: pingdatavolume
+            mountPath: /usr/src/pingpong/howmanypings

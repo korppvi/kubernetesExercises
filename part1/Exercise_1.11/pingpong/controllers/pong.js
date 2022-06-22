@@ -2,7 +2,7 @@
 
 const routerPong = require('express').Router()
 const fs = require('fs')
-const path="/tmp/pingdata/"
+const path="/usr/src/pingpong/howmanypings/"
 var counter=0
 
 routerPong.get('/',async(request, response) => {
