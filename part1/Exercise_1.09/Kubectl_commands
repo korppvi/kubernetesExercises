@@ -1,0 +1,11 @@
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.09/logoutput/manifests/deployment.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.09/pingpong/manifests/deployment.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.09/pingpong/manifests/service.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.09/logoutput/manifests/service.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.09/logoutput/manifests/ingress.yaml
+
+clustern awnser from urls : http://localhost:8091/random and http://localhost:8091/pingpong
