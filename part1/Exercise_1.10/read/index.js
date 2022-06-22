@@ -5,7 +5,7 @@ const http = require('http')
 const cron = require('node-cron');
 const server = http.createServer(app)
 const fs = require('fs')
-const path="C:/Users/Käyttäjä/Desktop/"
+const path="/usr/src/logs/timestamp/"
 
 const portEnv = process.env.PORT || 3012
 

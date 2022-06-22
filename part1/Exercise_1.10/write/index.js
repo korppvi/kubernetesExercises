@@ -2,7 +2,7 @@
 require('dotenv').config()
 const cron = require('node-cron');
 const fs = require('fs')
-const path="C:/Users/Käyttäjä/Desktop/"
+const path="/usr/src/logs/timestamp/"
 
 cron.schedule('*/5 * * * * *', async () => {
    
