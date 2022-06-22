@@ -20,9 +20,9 @@ spec:
           image: vilkorppi/generator:v5
           volumeMounts:
           - name: timestamps
-            mountPath: /usr/src/logs/timestamp
+            mountPath: /usr/src/generator/timestamp
         - name: generatorread
           image: vilkorppi/generator:v6
           volumeMounts:
           - name: timestamps
-            mountPath: /usr/src/logs/timestamp
+            mountPath: /usr/src/generator/timestamp
