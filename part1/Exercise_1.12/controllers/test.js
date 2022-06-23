@@ -7,7 +7,6 @@ const axios = require('axios')
 
 const pathToimage="/usr/src/webserver/image"
 
-
 function hasExpired(date) {
 
      const dateNow = new Date();
@@ -30,9 +29,11 @@ async function fetchNewImage() {
           responseType: 'stream',
      })
 
+
      const writer = newImage.data.pipe(fs.createWriteStream(pathToimage+'/randomImge.jpg'));
      writer.on('finish', () => {
        console.log('Got random image');
+       
      });
 
 }
@@ -48,9 +49,12 @@ routerTest.get('/image',async(request, response) => {
 
      if (!fs.existsSync(pathToimage+'/randomImge.jpg')) {
 
-
           await fetchNewImage()
           writeTimeStamp()
+
+          setTimeout(() => {response.sendFile(pathToimage+'/randomImge.jpg');}, 1000);
+          response.set('Cache-Control', 'no-store')
+          
      }
      else {
 
@@ -62,10 +66,15 @@ routerTest.get('/image',async(request, response) => {
                await fetchNewImage()
                writeTimeStamp()
             }
+
+          response.sendFile(pathToimage+'/randomImge.jpg')
+          response.set('Cache-Control', 'no-store')
      }
 
-     response.set('Cache-Control', 'no-store')
-     response.sendFile(pathToimage+'/randomImge.jpg');
+     
+
+     
+     
 	  
 })
 
