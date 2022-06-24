@@ -12,13 +12,6 @@ spec:
       labels:
         app: pingpong
     spec:
-      volumes:
-        - name: pingdatavolume
-          persistentVolumeClaim:
-            claimName: claimtopingdata
       containers:
         - name: pingpong
           image: vilkorppi/pingpong:v3
-          volumeMounts:
-          - name: pingdatavolume
-            mountPath: /usr/src/pingpong/howmanypings

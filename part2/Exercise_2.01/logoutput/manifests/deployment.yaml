@@ -12,13 +12,6 @@ spec:
       labels:
         app: stringgenerator
     spec:
-      volumes:
-        - name: pingdataforgen
-          persistentVolumeClaim:
-            claimName: claimtopingdata
       containers:
         - name: stringgenerator
           image: vilkorppi/generator:v8
-          volumeMounts:
-          - name: pingdataforgen
-            mountPath: /usr/src/generator/howmanypings
