@@ -31,7 +31,8 @@ routerTest.get('/',async(request, response) => {
 
 routerTest.get('/',async(request, response) => {
 
-      const pongs = (await axios.get('http://pingpongservice:567/pingpong/count')).data
+      const responseFromPingpong = await axios.get('http://pingpongservice:567/pingpong/count')
+      const pongs = responseFrompingpong.data
       response.write(new Date(Date.now())+': '+generatedhash, 'utf8', () => {});
       response.end('\nPing / Pongs: '+pongs)
 })
