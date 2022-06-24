@@ -18,7 +18,7 @@ spec:
             claimName: claimtopingdata
       containers:
         - name: stringgenerator
-          image: vilkorppi/generator:v7
+          image: vilkorppi/generator:testv1
           volumeMounts:
           - name: pingdataforgen
             mountPath: /usr/src/generator/howmanypings

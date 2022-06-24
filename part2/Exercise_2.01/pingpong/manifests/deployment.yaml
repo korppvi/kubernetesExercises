@@ -18,7 +18,7 @@ spec:
             claimName: claimtopingdata
       containers:
         - name: pingpong
-          image: vilkorppi/pingpong:v2
+          image: vilkorppi/pingpong:testv1
           volumeMounts:
           - name: pingdatavolume
             mountPath: /usr/src/pingpong/howmanypings
