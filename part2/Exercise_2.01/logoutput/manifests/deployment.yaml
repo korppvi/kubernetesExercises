@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stringgenerator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stringgenerator
+  template:
+    metadata:
+      labels:
+        app: stringgenerator
+    spec:
+      volumes:
+        - name: pingdataforgen
+          persistentVolumeClaim:
+            claimName: claimtopingdata
+      containers:
+        - name: stringgenerator
+          image: vilkorppi/generator:v7
+          volumeMounts:
+          - name: pingdataforgen
+            mountPath: /usr/src/generator/howmanypings
