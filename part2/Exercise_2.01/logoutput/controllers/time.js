@@ -28,7 +28,10 @@ routerTest.get('/',async(request, response) => {
 
 routerTest.get('/testCounter',async(request, response) => {
 
-      const pingpongResponse = await axios.get('http://pingpongservice:567/test')
+
+      console.log("Debug1")
+
+      const pingpongResponse = await axios.get('http://pingpongservice:567/pingpong/test')
       response.json({"response":"counter: "+pingpongResponse.data})
 })
 
