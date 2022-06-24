@@ -7,8 +7,12 @@ var counter=0
 
 routerPong.get('/',async(request, response) => {
 
+
       counter++
 
+      /*
+
+      Depcrated for now
       
       fs.writeFile(path+'pongs.txt',(counter+''), writeError => {
 
@@ -17,6 +21,8 @@ routerPong.get('/',async(request, response) => {
             }
 
       })
+
+      */
       
 
       response.json({"response":"pong "+counter})
@@ -24,7 +30,7 @@ routerPong.get('/',async(request, response) => {
 	  
 })
 
-routerPong.get('/test',async(request, response) => {
+routerPong.get('/count',async(request, response) => {
 
      
       response.write(counter+'', 'utf8', () => {});

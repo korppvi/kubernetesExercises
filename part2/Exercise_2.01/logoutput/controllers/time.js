@@ -9,6 +9,9 @@ const fs = require('fs')
 const path="/usr/src/generator/howmanypings/"
 var pong=''
 
+/*
+Depcrated for now
+
 routerTest.get('/',async(request, response) => {
 
       fs.readFile(path+'pongs.txt', 'utf8', (readError, pongs) => {
@@ -24,15 +27,13 @@ routerTest.get('/',async(request, response) => {
 
 	  
 })
+*/
 
-
-routerTest.get('/testCounter',async(request, response) => {
-
-
-      console.log("Debug1")
-
-      const pingpongResponse = await axios.get('http://pingpongservice:567/pingpong/test')
-      response.json({"response":"counter: "+pingpongResponse.data})
+routerTest.get('/',async(request, response) => {
+      
+      const pongs = await axios.get('http://pingpongservice:567/pingpong/count')
+      response.write(new Date(Date.now())+': '+generatedhash, 'utf8', () => {});
+      response.end('\nPing / Pongs: '+pongs)
 })
 
  module.exports = routerTest
