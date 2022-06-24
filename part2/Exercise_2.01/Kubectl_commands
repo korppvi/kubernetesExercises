@@ -2,16 +2,16 @@
 
 docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/pingdata
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/pingpong/manifests/persistentvolume.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/persistentvolume.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/pingpong/manifests/persistentvolumeclaim.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/persistentvolumeclaim.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/pingpong/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/deployment.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/pingpong/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/service.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/logoutput/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/logoutput/manifests/deployment.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/logoutput/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/logoutput/manifests/service.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part1/Exercise_1.11/pingpong/manifests/ingress.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/ingress.yaml

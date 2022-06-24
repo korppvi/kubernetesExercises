@@ -27,8 +27,8 @@ routerPong.get('/',async(request, response) => {
 routerPong.get('/test',async(request, response) => {
 
      
-      response.json({"response":"pong "+counter})
-
+      response.write(counter+'', 'utf8', () => {});
+      response.end('')
 	  
 })
 

@@ -3,6 +3,7 @@
 const routerTest = require('express').Router()
 var hashGenerator = require('hash-generator');
 var generatedhash = hashGenerator(8);
+const axios =require('axios')
 
 const fs = require('fs')
 const path="/usr/src/generator/howmanypings/"
@@ -27,9 +28,8 @@ routerTest.get('/',async(request, response) => {
 
 routerTest.get('/testCounter',async(request, response) => {
 
-      const response = await axios.get('http://pingpongservice:567/test')
-
-      response.json({"response":"counter "+counter})
+      const pingpongResponse = await axios.get('http://pingpongservice:567/test')
+      response.json({"response":"counter: "+pingpongResponse.data})
 })
 
  module.exports = routerTest
