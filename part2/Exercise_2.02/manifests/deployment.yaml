@@ -18,7 +18,7 @@ spec:
             claimName: claimtowebserver
       containers:
         - name: webserverport
-          image: vilkorppi/webserver:v7
+          image: vilkorppi/webserver:v8
           volumeMounts:
           - name: webservervolume
             mountPath: /usr/src/webserver/image

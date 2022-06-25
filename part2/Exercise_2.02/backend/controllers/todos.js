@@ -7,9 +7,7 @@ const axios = require('axios')
 var bodyParser = require('body-parser')
 const todos =[]
 
-//const pathToimage="/usr/src/webserver/image"
-
-const pathToimage="C:/Users/Käyttäjä/Desktop/image"
+const pathToimage="/usr/src/webserver/image"
 
 var parser = bodyParser.urlencoded({ extended: false })
 
