@@ -1,0 +1,17 @@
+
+
+kubectl create namespace exercises
+
+kubectl config set-context --current --namespace=exercises
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/deployment.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/service.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/logoutput/manifests/deployment.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/logoutput/manifests/service.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.01/pingpong/manifests/ingress.yaml
+
+url endpoints : /pingpong and /random

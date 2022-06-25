@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stringgenerator
+  namespace: exercises
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stringgenerator
+  template:
+    metadata:
+      labels:
+        app: stringgenerator
+    spec:
+      containers:
+        - name: stringgenerator
+          image: vilkorppi/generator:v9
