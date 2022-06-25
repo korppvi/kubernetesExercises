@@ -1,0 +1,13 @@
+
+
+docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/image
+
+kubectl create namespace project
+kubectl config set-context --current --namespace=project
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.02/manifests/persistentvolume.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.02/manifests/persistentvolumeclaim.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.02/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.02/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.02/manifests/ingress.yaml
