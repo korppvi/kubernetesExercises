@@ -1,0 +1,5 @@
+
+
+kubectl create namespace exercises
+
+kubectl config set-context --current --namespace=exercises
