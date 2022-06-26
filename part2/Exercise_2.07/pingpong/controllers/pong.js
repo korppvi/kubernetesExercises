@@ -53,6 +53,9 @@ routerPong.get('/testdb',async(request, response) => {
             if (err) throw err;
             console.log("Connected!");
           });
+
+          response.write('test', 'utf8', () => {});
+          response.end('')
 	  
 })
 
