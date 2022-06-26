@@ -32,6 +32,9 @@ spec:
           image: postgres:12.10
           ports:
             - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: testfile
           volumeMounts:
             - name: dbdata
               mountPath: /database
