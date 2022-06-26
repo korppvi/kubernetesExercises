@@ -1,10 +1,10 @@
 
 
-kubectl create configmap helloworld --from-file=env
+kubectl create namespace exercises
+
+kubectl create configmap helloworld --from-file=env --namespace=exercises
 
 kubectl describe configmaps helloworld
-
-kubectl create namespace exercises
 
 kubectl config set-context --current --namespace=exercises
 
