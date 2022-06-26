@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: exercises
+spec:
+  ports:
+  - port: 5432
+  clusterIP: None
+  selector:
+    app: postgresqlapp
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefuldb
+  namespace: exercises
+spec:
+  serviceName: database
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresqlapp
+  template:
+    metadata:
+      labels:
+        app: postgresqlapp
+      namespace: exercises
+    spec:
+      containers:
+        - name: postgresql
+          image: postgres:12.10
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: dbdata
+              mountPath: /database
+  volumeClaimTemplates:
+    - metadata:
+        name: dbdata
+        namespace: exercises
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: local-path
+        resources:
+          requests:
+            storage: 100Mi
