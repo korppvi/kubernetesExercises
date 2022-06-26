@@ -16,10 +16,10 @@ spec:
       containers:
         - name: stringgenerator
           image: vilkorppi/generator:v10
-          command: [ "/bin/sh", "-c", "env" ]
           env:
             - name: MESSAGE
               valueFrom:
                 configMapKeyRef:
                   name: helloworld
                   key: message
+      restartPolicy: Never
