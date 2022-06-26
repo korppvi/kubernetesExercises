@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: pingpong
-          image: vilkorppi/pingpong:v4
+          image: vilkorppi/pingpong:v5
