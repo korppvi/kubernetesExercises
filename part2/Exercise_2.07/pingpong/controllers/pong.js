@@ -53,10 +53,10 @@ routerPong.get('/testdb',async(request, response) => {
 
       const res = await client.query('SELECT 1')
       const test = res.rows[0]+''
-      console.log('Debug: '+res.rows[0])
+      console.log('Debug: '+test)
       await client.end()
 
-      response.write(res.rows[0]+'', 'utf8', () => {});
+      response.write(test, 'utf8', () => {});
       response.end('')
 	  
 })
