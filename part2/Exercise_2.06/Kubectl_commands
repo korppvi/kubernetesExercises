@@ -4,9 +4,9 @@ kubectl create namespace exercises
 
 kubectl config set-context --current --namespace=exercises
 
-kubectl create configmap helloworld --from-file=env --namespace=exercises
+kubectl create configmap helloworld --from-env-file=env --namespace=exercises
 
-kubectl describe configmaps helloworld
+kubectl get configmap helloworld -o yaml
 
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.06/pingpong/manifests/deployment.yaml
 
