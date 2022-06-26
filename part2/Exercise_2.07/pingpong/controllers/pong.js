@@ -49,7 +49,7 @@ routerPong.get('/count',async(request, response) => {
 
 routerPong.get('/testdb',async(request, response) => {
 
-      client.query(query, (err, res) => {
+      client.query("SELECT 1", (err, res) => {
             if (err) {
                 console.error(err);
                 return;
@@ -59,7 +59,7 @@ routerPong.get('/testdb',async(request, response) => {
             }
             client.end();
         });
-        
+
           response.write('test', 'utf8', () => {});
           response.end('')
 	  
