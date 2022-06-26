@@ -49,11 +49,17 @@ routerPong.get('/count',async(request, response) => {
 
 routerPong.get('/testdb',async(request, response) => {
 
-      client.connect(function(err) {
-            if (err) throw err;
-            console.log("Connected!");
-          });
-
+      client.query(query, (err, res) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            for (let row of res.rows) {
+                console.log(row);
+            }
+            client.end();
+        });
+        
           response.write('test', 'utf8', () => {});
           response.end('')
 	  
