@@ -22,4 +22,3 @@ spec:
                 configMapKeyRef:
                   name: helloworld
                   key: message
-      restartPolicy: Never
