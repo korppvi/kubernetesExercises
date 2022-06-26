@@ -52,7 +52,7 @@ routerPong.get('/testdb',async(request, response) => {
       client.connect()
 
       const res = await client.query('SELECT 1')
-      const test = res.rows[0]+''
+      const test = res.rows[0].data+''
       console.log('Debug: '+test)
       await client.end()
 
