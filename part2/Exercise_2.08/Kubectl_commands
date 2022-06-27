@@ -1,0 +1,19 @@
+
+
+docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/image
+
+kubectl create namespace project
+kubectl config set-context --current --namespace=project
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/secret.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/persistentvolume.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/persistentvolumeclaim.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/statefulset.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/ingress.yaml
+
+kubectl exec  webserver-??? npm run init

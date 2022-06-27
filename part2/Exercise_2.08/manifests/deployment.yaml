@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserverport
+  namespace: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webserverport
+  template:
+    metadata:
+      labels:
+        app: webserverport
+    spec:
+      volumes:
+        - name: webservervolume
+          persistentVolumeClaim:
+            claimName: claimtowebserver
+      containers:
+        - name: webserverport
+          image: vilkorppi/webserver:v10
+          envFrom:
+          - secretRef:
+              name: dbsecrets
+          volumeMounts:
+          - name: webservervolume
+            mountPath: /usr/src/webserver/image
