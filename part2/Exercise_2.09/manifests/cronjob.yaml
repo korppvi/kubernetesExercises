@@ -12,3 +12,4 @@ spec:
           containers:
           - name: joboftoday
             image: job:v1
+      restartPolicy: Never
