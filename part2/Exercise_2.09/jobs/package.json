@@ -1,0 +1,14 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "todos",
+  "main": "index.js",
+  "scripts": {
+    "init":"node script.js"
+  },
+  "author": "Ville Korppi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
