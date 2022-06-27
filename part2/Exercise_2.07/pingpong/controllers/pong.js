@@ -21,9 +21,11 @@ routerPong.get('/',async(request, response) => {
 
       const result = await client.query('SELECT * from counter')
     
-      await client.query('INSERT INTO COUNTER VALUES('+( result.rows[0].count + 1 )+ ')')
+      await client.query('UPDATE COUNTER SET COUNT=('+( result.rows[0].count + 1 )+ ')')
 
-      response.json({"response":"pong "+(result.rows[0].count+1)})
+      const updatedresult = await client.query('SELECT * from counter')
+
+      response.json({"response":"pong "+(updatedresult.rows[0].count)})
 
 	  
 })
