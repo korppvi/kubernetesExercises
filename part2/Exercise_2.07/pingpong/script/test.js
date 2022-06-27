@@ -15,7 +15,7 @@ const client = new Client({
 
     const result = await client.query('SELECT * from counter')
 
-      //client.end()
+    client.end()
   
     console.log(result)
   }
