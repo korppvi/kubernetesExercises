@@ -1,10 +1,8 @@
 
 
 const routerPong = require('express').Router()
-const fs = require('fs')
 const { Client } = require('pg')
 const path="/usr/src/pingpong/howmanypings/"
-var counter=0
 
 const client = new Client({
       user: 'testuser',
@@ -32,8 +30,9 @@ routerPong.get('/',async(request, response) => {
 
 routerPong.get('/count',async(request, response) => {
 
+      const result = await client.query('SELECT * from counter')
      
-      response.write(counter+'', 'utf8', () => {});
+      response.write(result.rows[0].count+'', 'utf8', () => {});
       response.end('')
 	  
 })

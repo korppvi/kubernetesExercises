@@ -4,7 +4,7 @@ kubectl create namespace exercises
 
 kubectl config set-context --current --namespace=exercises
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/configmap.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/secret.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/statefulset.yaml
 
