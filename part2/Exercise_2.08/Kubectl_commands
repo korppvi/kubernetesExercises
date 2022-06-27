@@ -16,4 +16,4 @@ kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/m
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/service.yaml
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.08/manifests/ingress.yaml
 
-kubectl exec  webserver-??? npm run init
+kubectl exec webserverport-d9c6f7db6-gbfj4  npm run init
