@@ -6,7 +6,7 @@ const fs = require('fs')
 const axios = require('axios')
 var bodyParser = require('body-parser')
 const { Client } = require('pg')
-const todos =[]
+
 
 const pathToimage="/usr/src/webserver/image"
 
@@ -60,7 +60,7 @@ const client = new Client({
      port: 5432,
    })
 
-//client.connect()
+client.connect()
 
 router.get('/image',async(request, response) => {
 
@@ -91,16 +91,35 @@ router.get('/image',async(request, response) => {
 
 router.post('/todos',parser ,async(request, response) => {
 
+     const todos =[]
 
      var todo = request.body.todo
 
-     todos.push(todo)
+     await client.query("INSERT INTO TODOS VALUES('"+todo+"')")
+
+     const result = await client.query('SELECT * from todos')
+
+     for (let a = 0; a < result.rows.length; a++) {
+
+          todos.push(result.rows[a].task)
+        
+     } 
 
      response.status(200).json(todos)
 
 })
 
 router.get('/todos', async(request, response) => {
+
+     const todos =[]
+
+     const result = await client.query('SELECT * from todos')
+
+     for (let a = 0; a < result.rows.length; a++) {
+
+          todos.push(result.rows[a].task)
+        
+     } 
 
      response.status(200).json(todos)
 
