@@ -7,10 +7,15 @@ const client = new Client({
   })
 
 
-  client.connect()
+  async function test() {
 
-  const result = await client.query('SELECT * from counter')
+    client.connect()
 
-  console.log(result)
+    const result = await client.query('SELECT * from counter')
+  
+    console.log(result)
+  }
+
+  test()
 
   //client.end()
