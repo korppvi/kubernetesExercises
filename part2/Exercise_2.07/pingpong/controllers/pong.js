@@ -49,6 +49,7 @@ routerPong.get('/count',async(request, response) => {
 
 routerPong.get('/testdb',async(request, response) => {
 
+      /*
       client.query("CREATE TABLE Todos (todo varchar(255));", (err, res) => {
             if (err) {
                 console.error(err);
@@ -56,6 +57,12 @@ routerPong.get('/testdb',async(request, response) => {
             }
             client.end();
         });
+        */
+
+        client
+        .connect()
+        .then(() => console.log('connected'))
+        .catch(err => console.error('connection error', err.stack))
 
           response.write('test', 'utf8', () => {});
           response.end('')
