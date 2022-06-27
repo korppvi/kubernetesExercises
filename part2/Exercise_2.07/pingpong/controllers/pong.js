@@ -17,22 +17,16 @@ const client = new Client({
 routerPong.get('/',async(request, response) => {
 
 
-      counter++
-
       client
       .connect()
       .then(() => console.log('connected'))
       .catch(err => console.error('connection error', err.stack))
 
+      const { rows } = await client.query('SELECT * from COUNTER')
 
-      client.query('SELECT * from COUNTER', (err, res) => {
-            if (err) throw err
-            console.log(res)
-            client.end()
-          })
+      client.end()
       
-
-      response.json({"response":"pong "+counter})
+      response.json({"response":"pong "+rows[0]})
 
 	  
 })
