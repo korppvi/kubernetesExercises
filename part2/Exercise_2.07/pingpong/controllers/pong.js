@@ -24,7 +24,7 @@ routerPong.get('/',async(request, response) => {
         .then(() => client.end())
 
 
-      response.json({"response":"pong "+})
+      response.json({"response":"pong "})
 
 	  
 })
