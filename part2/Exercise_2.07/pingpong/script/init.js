@@ -9,23 +9,10 @@ const client = new Client({
     port: 5432,
     })
     
-    client
-      .connect()
-      .then(() => console.log('connected'))
-      .catch(err => console.error('connection error', err.stack))
+    client.connect().then(() =>{}).catch(
+        connectionError => console.error(connectionError.stack)
+      )
 
-      
-    client.query("CREATE TABLE COUNTER (count integer);", (err, res) => {
-        if (err) {
-                console.error(err);
-                return;
-            }
-    });
+    client.query("CREATE TABLE COUNTER (count integer);", (error, response) => {});
 
-    client.query("INSERT INTO COUNTER VALUES(0);", (err, res) => {
-      if (err) {
-              console.error(err);
-              return;
-          }
-          client.end();
-  });
+    client.query("INSERT INTO COUNTER VALUES(0);", (error, response) => {client.end();});
