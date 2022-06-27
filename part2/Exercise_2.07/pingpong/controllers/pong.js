@@ -16,6 +16,7 @@ const client = new Client({
 
 routerPong.get('/',async(request, response) => {
 
+      /*
       client.connect()
       client
         .query('SELECT * from counter')
@@ -23,6 +24,15 @@ routerPong.get('/',async(request, response) => {
         .catch(e => console.error(e.stack))
         .then(() => client.end())
 
+        */
+
+      client.connect()
+
+      const result = await client.query('SELECT * from counter')
+
+      console.log(result)
+
+      //client.end()
 
       response.json({"response":"pong "})
 
