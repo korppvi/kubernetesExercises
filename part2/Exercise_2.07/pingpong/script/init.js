@@ -20,7 +20,6 @@ const client = new Client({
                 console.error(err);
                 return;
             }
-            client.end();
     });
 
     client.query("INSERT INTO COUNTER VALUES(0);", (err, res) => {
