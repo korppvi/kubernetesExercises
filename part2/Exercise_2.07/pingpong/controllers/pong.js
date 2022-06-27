@@ -19,19 +19,21 @@ routerPong.get('/',async(request, response) => {
 
       counter++
 
-      /*
+      client
+      .connect()
+      .then(() => console.log('connected'))
+      .catch(err => console.error('connection error', err.stack))
 
-      Depcrated for now
+
+      const query="INSERT INTO TODOS VALUES('" +counter+ "');"
       
-      fs.writeFile(path+'pongs.txt',(counter+''), writeError => {
-
-            if(writeError) {
-                  console.log(writeError)
+      client.query(query, (err, res) => {
+            if (err) {
+                console.error(err);
+                return;
             }
-
-      })
-
-      */
+            client.end();
+        });
       
 
       response.json({"response":"pong "+counter})
@@ -44,28 +46,6 @@ routerPong.get('/count',async(request, response) => {
      
       response.write(counter+'', 'utf8', () => {});
       response.end('')
-	  
-})
-
-routerPong.get('/testdb',async(request, response) => {
-
-      client
-      .connect()
-      .then(() => console.log('connected'))
-      .catch(err => console.error('connection error', err.stack))
-
-      
-      client.query("CREATE TABLE Todos (todo varchar(255));", (err, res) => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            client.end();
-        });
-        
-
-          response.write('test', 'utf8', () => {});
-          response.end('')
 	  
 })
 

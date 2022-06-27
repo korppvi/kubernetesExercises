@@ -1,10 +1,11 @@
 {
-  "name": "Project",
+  "name": "PingPong",
   "version": "1.0.0",
-  "description": "Webserver",
+  "description": "PingPong",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "init": "node script/init.js"
   },
   "author": "Ville Korppi",
   "license": "ISC",
