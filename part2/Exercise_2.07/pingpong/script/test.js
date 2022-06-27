@@ -17,7 +17,7 @@ const client = new Client({
 
     client.end()
   
-    console.log(result)
+    console.log(result.rows[0].count)
   }
 
   test()

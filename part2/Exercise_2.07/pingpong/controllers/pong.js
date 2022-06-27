@@ -26,15 +26,15 @@ routerPong.get('/',async(request, response) => {
 
         */
 
-      client.connect()
+        client.connect()
 
-      const result = await client.query('SELECT * from counter')
+        const result = await client.query('SELECT * from counter')
+    
+        client.end()
+      
+        console.log(result.rows[0].count)
 
-      console.log(result)
-
-      //client.end()
-
-      response.json({"response":"pong "})
+      response.json({"response":"pong "+(result.rows[0].count+1)})
 
 	  
 })
