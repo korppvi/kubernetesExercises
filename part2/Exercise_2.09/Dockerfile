@@ -1,5 +1,5 @@
 FROM node:alpine
-COPY . /usr/src/job
-WORKDIR /usr/src/job
+COPY . /usr/src
+WORKDIR /usr/src/jobs
 RUN npm ci
 CMD ["npm", "run","init"]
