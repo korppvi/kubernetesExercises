@@ -13,3 +13,5 @@ kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/m
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/service.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/ingress.yaml
+
+kubectl exec  pingpong-5bd56f9cfb-lvhmj npm run init
