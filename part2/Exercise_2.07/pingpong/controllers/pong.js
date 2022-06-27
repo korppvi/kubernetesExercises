@@ -49,13 +49,10 @@ routerPong.get('/count',async(request, response) => {
 
 routerPong.get('/testdb',async(request, response) => {
 
-      client.query("SELECT 1", (err, res) => {
+      client.query("CREATE TABLE Todos (todo varchar(255));", (err, res) => {
             if (err) {
                 console.error(err);
                 return;
-            }
-            for (let row of res.rows) {
-                console.log(row);
             }
             client.end();
         });
