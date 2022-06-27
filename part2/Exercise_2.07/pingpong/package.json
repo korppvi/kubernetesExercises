@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "init": "node script/init.js",
-    "test": "node script/test.js"
+    "init": "node script/init.js"
   },
   "author": "Ville Korppi",
   "license": "ISC",

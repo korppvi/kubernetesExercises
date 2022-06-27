@@ -16,3 +16,6 @@ spec:
       containers:
         - name: pingpong
           image: vilkorppi/pingpong:v5
+          envFrom:
+          - secretRef:
+              name: dbsecrets
