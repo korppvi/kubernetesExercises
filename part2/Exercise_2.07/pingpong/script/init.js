@@ -15,10 +15,18 @@ const client = new Client({
       .catch(err => console.error('connection error', err.stack))
 
       
-    client.query("CREATE TABLE TODOS (todo varchar(255));", (err, res) => {
+    client.query("CREATE TABLE COUNTER (count integer);", (err, res) => {
         if (err) {
                 console.error(err);
                 return;
             }
             client.end();
     });
+
+    client.query("INSERT INTO COUNTER VALUES(0);", (err, res) => {
+      if (err) {
+              console.error(err);
+              return;
+          }
+          client.end();
+  });

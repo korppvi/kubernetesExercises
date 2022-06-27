@@ -25,15 +25,11 @@ routerPong.get('/',async(request, response) => {
       .catch(err => console.error('connection error', err.stack))
 
 
-      const query="INSERT INTO TODOS VALUES('" +counter+ "');"
-      
-      client.query(query, (err, res) => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            client.end();
-        });
+      client.query('SELECT * from COUNTER', (err, res) => {
+            if (err) throw err
+            console.log(res)
+            client.end()
+          })
       
 
       response.json({"response":"pong "+counter})
