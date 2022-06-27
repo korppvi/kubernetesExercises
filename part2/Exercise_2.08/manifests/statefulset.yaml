@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: database
-  namespace: exercises
+  namespace: project
 spec:
   ports:
   - port: 5432
@@ -14,7 +14,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: statefuldb
-  namespace: exercises
+  namespace: project
 spec:
   serviceName: database
   replicas: 1
@@ -25,7 +25,7 @@ spec:
     metadata:
       labels:
         app: postgresqlapp
-      namespace: exercises
+      namespace: project
     spec:
       containers:
         - name: postgresql
@@ -41,7 +41,7 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: dbdata
-        namespace: exercises
+        namespace: project
       spec:
         accessModes: ["ReadWriteOnce"]
         storageClassName: local-path
