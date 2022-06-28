@@ -8,7 +8,8 @@ var bodyParser = require('body-parser')
 const { Client } = require('pg')
 
 
-const pathToimage="/usr/src/webserver/image"
+//const pathToimage="/usr/src/webserver/image"
+const pathToimage="C:/Users/Käyttäjä/Desktop/image"
 
 var parser = bodyParser.urlencoded({ extended: false })
 
@@ -60,7 +61,7 @@ const client = new Client({
      port: 5432,
    })
 
-client.connect()
+//client.connect()
 
 router.get('/image',async(request, response) => {
 
@@ -101,6 +102,7 @@ router.post('/todos',parser ,async(request, response) => {
 
           console.log('Too many characters in :'+todo)
           response.status(200).json({"toomany":"max 140"})
+          response.end('')
      }
 
      await client.query("INSERT INTO TODOS VALUES('"+todo+"')")
@@ -112,7 +114,7 @@ router.post('/todos',parser ,async(request, response) => {
           todos.push(result.rows[a].task)
         
      } 
-
+     
      response.status(200).json(todos)
 
 })
@@ -128,7 +130,7 @@ router.get('/todos', async(request, response) => {
           todos.push(result.rows[a].task)
         
      } 
-
+     
      response.status(200).json(todos)
 
 })
