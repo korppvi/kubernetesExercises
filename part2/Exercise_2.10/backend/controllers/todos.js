@@ -102,20 +102,21 @@ router.post('/todos',parser ,async(request, response) => {
 
           console.log('Too many characters in :'+todo)
           response.status(200).json({"toomany":"max 140"})
-          response.end('')
      }
+     else {
 
-     await client.query("INSERT INTO TODOS VALUES('"+todo+"')")
+          await client.query("INSERT INTO TODOS VALUES('"+todo+"')")
 
-     const result = await client.query('SELECT * from todos')
+          const result = await client.query('SELECT * from todos')
 
-     for (let a = 0; a < result.rows.length; a++) {
+          for (let a = 0; a < result.rows.length; a++) {
 
-          todos.push(result.rows[a].task)
-        
-     } 
-     
-     response.status(200).json(todos)
+               todos.push(result.rows[a].task)
+          
+          } 
+          
+          response.status(200).json(todos)
+     }
 
 })
 
