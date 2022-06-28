@@ -19,7 +19,7 @@ spec:
             claimName: claimtowebserver
       containers:
         - name: webserverport
-          image: vilkorppi/webserver:v13
+          image: vilkorppi/webserver:v14
           envFrom:
           - secretRef:
               name: dbsecrets

@@ -8,8 +8,7 @@ var bodyParser = require('body-parser')
 const { Client } = require('pg')
 
 
-//const pathToimage="/usr/src/webserver/image"
-const pathToimage="C:/Users/Käyttäjä/Desktop/image"
+const pathToimage="/usr/src/webserver/image"
 
 var parser = bodyParser.urlencoded({ extended: false })
 
@@ -61,7 +60,7 @@ const client = new Client({
      port: 5432,
    })
 
-//client.connect()
+client.connect()
 
 router.get('/image',async(request, response) => {
 
