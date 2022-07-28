@@ -1,0 +1,18 @@
+{
+  "name": "PingPong",
+  "version": "1.0.0",
+  "description": "PingPong",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "init": "node script/init.js"
+  },
+  "author": "Ville Korppi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.7.3"
+  }
+}
