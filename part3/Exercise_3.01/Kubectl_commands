@@ -4,14 +4,14 @@ kubectl create namespace exercises
 
 kubectl config set-context --current --namespace=exercises
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/secret.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/secret.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/statefulset.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/statefulset.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/deployment.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/service.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part2/Exercise_2.07/pingpong/manifests/ingress.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/ingress.yaml
 
 kubectl exec  pingpong-5bd56f9cfb-lvhmj npm run init
