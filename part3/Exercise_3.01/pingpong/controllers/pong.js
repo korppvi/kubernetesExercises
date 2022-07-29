@@ -37,4 +37,15 @@ routerPong.get('/count',async(request, response) => {
 	  
 })
 
+routerPong.get('/init',async(request, response) => {
+
+      await client.query("CREATE TABLE COUNTER (count integer);");
+
+      await client.query("INSERT INTO COUNTER VALUES(0);");
+     
+      response.write('init done', 'utf8', () => {});
+      response.end('')
+	  
+})
+
  module.exports = routerPong
