@@ -1,5 +1,4 @@
 
-
 gcloud auth login
 
 gcloud container clusters create test --zone=europe-north1-b --cluster-version=1.22
@@ -12,21 +11,21 @@ kubectl create configmap helloworld --from-env-file=env --namespace=exercises
 
 kubectl get configmap helloworld -o yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/secret.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/pingpong/manifests/secret.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/statefulset.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/pingpong/manifests/statefulset.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/pingpong/manifests/deployment.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/service.yaml
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/pingpong/manifests/service.yaml
 
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/logoutput/manifests/deployment.yaml
 
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/logoutput/manifests/service.yaml
 
-kubectl get svc --watch
+kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.02/pingpong/manifests/ingress.yaml
 
-  NAME              TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
-  database          ClusterIP      None            <none>         5432/TCP        6m31s
-  pingpongservice   LoadBalancer   10.32.8.170   35.228.142.252   567:32664/TCP   4m49s
+kubectl get ing
 
-Application was initiliazed by visiting url : 35.228.142.252:567/pingpong/init
+Application was initiliazed by visiting url : url:port/pingpong/init
 
