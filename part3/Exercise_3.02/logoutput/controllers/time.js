@@ -38,4 +38,10 @@ routerTest.get('/',async(request, response) => {
       response.end('\nPing / Pongs: '+pongs)
 })
 
+routerTest.get('/test',async(request, response) => {
+
+      response.write('test123')
+      response.end('')
+})
+
  module.exports = routerTest
