@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/apps/v1%40statefulset": "file:///c%3A/Users/K%C3%A4ytt%C3%A4j%C3%A4/Desktop/Exercises/part3/Exercise_3.01/pingpong/manifests/statefulset.yaml"
+    }
+}

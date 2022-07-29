@@ -44,6 +44,7 @@ spec:
         namespace: exercises
       spec:
         accessModes: ["ReadWriteOnce"]
+        storageClassName: ""
         resources:
           requests:
             storage: 100Mi
