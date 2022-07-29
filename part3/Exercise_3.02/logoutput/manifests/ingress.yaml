@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: forall-ingress
+  namespace: exercises
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: pingpongservice
+            port:
+              number: 567
+  - http:
+      paths:
+      - path: /random
+        pathType: Prefix
+        backend:
+          service:
+            name: stringgeneratorservice
+            port:
+              number: 567
