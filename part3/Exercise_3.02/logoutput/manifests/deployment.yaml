@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: stringgenerator
-          image: vilkorppi/generator:v11
+          image: vilkorppi/generator:v12
           env:
             - name: MESSAGE
               valueFrom:
