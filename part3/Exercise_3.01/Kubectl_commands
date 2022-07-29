@@ -1,5 +1,9 @@
 
 
+gcloud auth login
+
+gcloud container clusters create test --zone=europe-north1-b --cluster-version=1.22
+
 kubectl create namespace exercises
 
 kubectl config set-context --current --namespace=exercises
@@ -12,4 +16,11 @@ kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/m
 
 kubectl apply -f https://raw.githubusercontent.com/korppvi/kubernetesExercises/main/part3/Exercise_3.01/pingpong/manifests/service.yaml
 
-visit: s
+kubectl get svc --watch
+
+  NAME              TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
+  database          ClusterIP      None            <none>         5432/TCP        6m31s
+  pingpongservice   LoadBalancer   10.32.8.170   35.228.142.252   567:32664/TCP   4m49s
+
+Application was initiliazed by visiting url : 35.228.142.252:567/pingpong/init
+
