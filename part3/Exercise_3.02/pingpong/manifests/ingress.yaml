@@ -16,7 +16,7 @@ spec:
               number: 80
   - http:
       paths:
-      - path: /
+      - path: /random
         pathType: Prefix
         backend:
           service:

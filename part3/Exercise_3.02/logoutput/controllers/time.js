@@ -29,27 +29,32 @@ routerTest.get('/',async(request, response) => {
 
 */
 
-routerTest.get('/',async(request, response) => {
+routerTest.get('/test',async(request, response) => {
 
-
-      response.write('Ok', 'utf8', () => {});
+     
+      response.write("Ok", 'utf8', () => {});
       response.end('')
-
+     
 })
 
-routerTest.get('/random',async(request, response) => {
+routerTest.get('/init',async(request, response) => {
 
-      /*
+     
+      const responseFromPingpong = await axios.get('http://pingpongservice:80/pingpong/init')
+      response.write("init done", 'utf8', () => {});
+      response.end('')
+     
+})
+
+routerTest.get('/',async(request, response) => {
+
+     
       const responseFromPingpong = await axios.get('http://pingpongservice:80/pingpong/count')
       const pongs = responseFromPingpong.data
       response.write(process.env.MESSAGE+'\n')
       response.write(new Date(Date.now())+': '+generatedhash, 'utf8', () => {});
       response.end('\nPing / Pongs: '+pongs)
-      */
-
-      response.write('test123', 'utf8', () => {});
-      response.end('')
-
+     
 })
 
 
