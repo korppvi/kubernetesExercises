@@ -13,7 +13,7 @@ spec:
           service:
             name: pingpongservice
             port:
-              number: 567
+              number: 80
   - http:
       paths:
       - path: /random
@@ -22,4 +22,4 @@ spec:
           service:
             name: stringgeneratorservice
             port:
-              number: 567
+              number: 80
