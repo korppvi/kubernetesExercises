@@ -8,6 +8,6 @@ spec:
   selector:
     app: stringgenerator
   ports:
-    - port: 567
+    - port: 80
       protocol: TCP
       targetPort: 3012
