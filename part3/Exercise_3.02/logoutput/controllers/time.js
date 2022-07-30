@@ -31,6 +31,14 @@ routerTest.get('/',async(request, response) => {
 
 routerTest.get('/',async(request, response) => {
 
+
+      response.write('Ok', 'utf8', () => {});
+      response.end('')
+
+})
+
+routerTest.get('/random',async(request, response) => {
+
       /*
       const responseFromPingpong = await axios.get('http://pingpongservice:80/pingpong/count')
       const pongs = responseFromPingpong.data
